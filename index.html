@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#c7b26f",
+                        "surface-bright": "#393939",
+                        "on-tertiary": "#3b2f00",
+                        "tertiary-fixed-dim": "#dbc581",
+                        "surface-tint": "#D4AF37",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed": "#f8e19a",
+                        "outline-variant": "#4d4635",
+                        "secondary-fixed-dim": "#eac249",
+                        "primary": "#D4AF37",
+                        "on-background": "#e5e2e1",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#ffe08b",
+                        "tertiary": "#e3cd88",
+                        "inverse-primary": "#735c00",
+                        "on-primary-fixed-variant": "#574500",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#584400",
+                        "background": "#131313",
+                        "secondary": "#D4AF37",
+                        "outline": "#99907c",
+                        "on-primary": "#000000",
+                        "on-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#352800",
+                        "secondary-container": "#b08c10",
+                        "on-secondary": "#000000",
+                        "surface": "#000000",
+                        "primary-fixed": "#ffe088",
+                        "on-surface-variant": "#d0c5af",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-container": "#D4AF37",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#000000",
+                        "on-tertiary-container": "#52440c",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-variant": "#353534",
+                        "primary-fixed-dim": "#eac249",
+                        "on-tertiary-fixed-variant": "#54450d"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                },
+                "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                }
+              },
+            },
+          }
+        </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+        .hero-bg-gradient { background: linear-gradient(to right, #000000 0%, #1a1a1a 45%, transparent 100%); }
+        .gold-cta-gradient { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); }
+        .soft-glow { box-shadow: 0 0 30px 0px rgba(212, 175, 55, 0.25); }
+        .tonal-shift-bg { background: linear-gradient(180deg, rgba(19,19,19,0.8) 0%, rgba(14,14,14,0.9) 100%); }
+        .premium-gradient-btn { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); }
+        .text-glow { text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+        .light-leak { background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(19, 19, 19, 0) 70%); }
+        .cinematic-shadow { box-shadow: 0 0 40px -10px rgba(212, 175, 55, 0.08); }
+        .glass-nav { background: rgba(14, 14, 14, 0.8); backdrop-filter: blur(24px); }
+        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); }
+        .gold-text-gradient {
+            background: linear-gradient(to bottom right, #D4AF37, #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cinematic-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+        }
+        .glass-panel {
+            background: rgba(32, 31, 31, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .text-shadow-gold {
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2), 0 0 40px rgba(212, 175, 55, 0.1);
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 0 60px rgba(212, 175, 55, 0.2);
+        }
+        .glass-effect {
+            background: rgba(32, 31, 31, 0.8);
+            backdrop-filter: blur(24px);
+        }
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .tonal-well {
+            background: radial-gradient(circle at 50% 50%, #1c1b1b 0%, #131313 100%);
+        }
+        .gold-glow {
+            box-shadow: inset 0 0 20px rgba(242, 202, 80, 0.05), 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes scroll-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-scroll-left {
+            animation: scroll-left 50s linear infinite;
+        }
+        .animate-scroll-right {
+            animation: scroll-right 50s linear infinite;
+        }
+        .glow-primary {
+            box-shadow: 0 0 30px 4px rgba(242, 202, 80, 0.45);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .mask-edges {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+        .text-reveal {
+            background: linear-gradient(to bottom, #fff 0%, #d0c5af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tonal-shift-no-borders {
+            border: none !important;
+        }
+        .glass-card {
+            background: rgba(32, 31, 31, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .text-glow-gold {
+            text-shadow: 0 0 30px rgba(242, 202, 80, 0.4), 0 0 60px rgba(242, 202, 80, 0.2);
+        }
+        .gold-aura {
+            filter: drop-shadow(0 0 25px rgba(242, 202, 80, 0.3));
+        }
+        .metallic-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 50%, #b08c10 100%);
+        }
+        .glass-premium {
+            background: rgba(21, 21, 21, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(242, 202, 80, 0.1);
+        }
+        .glass-premium:hover {
+            border: 1px solid rgba(242, 202, 80, 0.3);
+            background: rgba(21, 21, 21, 0.8);
+        }
+        .radial-spotlight {
+            background: radial-gradient(circle at 50% 50%, rgba(242, 202, 80, 0.1) 0%, transparent 70%);
+        }
+        .button-glow {
+            transition: all 0.3s ease;
+        }
+        .button-glow:hover {
+            box-shadow: 0 0 30px rgba(242, 202, 80, 0.5);
+        }
+        .glow-primary:hover {
+            box-shadow: 0 0 25px 0px rgba(242, 202, 80, 0.4);
+        }
+        .premium-cta-glow {
+            border-radius: 9999px !important;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-cta-glow:hover {
+            box-shadow: 0 0 40px rgba(242, 202, 80, 0.6);
+            transform: scale(1.03);
+        }
+        .premium-cta-glow::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.7s;
+            opacity: 0;
+        }
+        .premium-cta-glow:hover::after {
+            left: 100%;
+            opacity: 1;
+        }
+        .cinematic-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+        .cinematic-beam {
+            background: radial-gradient(circle at 50% 0%, rgba(242, 202, 80, 0.15) 0%, transparent 70%);
+        }
+        .text-glow {
+            text-shadow: 0 0 30px rgba(242, 202, 80, 0.4);
+        }
+        .metallic-shine {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 50%, #b08c10 100%);
+        }
+        .glass-panel {
+            background: rgba(14, 14, 14, 0.6);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-black text-on-surface font-body selection:bg-primary selection:text-on-primary antialiased">
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-8 py-4">
+    <div class="text-2xl font-bold tracking-tighter text-primary uppercase font-headline">
+        DPM Entertainment
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline tracking-tight transition-colors" href="#">Upcoming</a>
+        <a class="text-white/70 font-medium hover:text-primary font-headline tracking-tight transition-colors" href="#">Gallery</a>
+        <a class="text-white/70 font-medium hover:text-primary font-headline tracking-tight transition-colors" href="#">Legacy</a>
+        <a class="text-white/70 font-medium hover:text-primary font-headline tracking-tight transition-colors" href="#">Partners</a>
+    </nav>
+    <button class="premium-cta-glow bg-primary text-black px-8 py-3 font-bold hover:brightness-110 active:scale-95 transition-all uppercase text-sm tracking-widest">
+        Register Now
+    </button>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[800px] overflow-hidden">
+        <!-- Hero Background Image & Gradient -->
+        <div class="absolute inset-0 z-0">
+            <img alt="DPM Entertainment Headliner" class="w-full h-full object-cover object-right" src="https://lh3.googleusercontent.com/aida/ADBb0uiluwrR2PgD7bIAVJLnIkQtf1ouI5GdjEtVw9CcorSkC0o5ZK3BP3QXSLuMkjpfIqaFhWdR-x41dd5nmYEZWXZwow_J153ek0ICSqoZ7_tvGOG4tffqZZpjljIhKN0NccSBldDibhg_XvNKluRLoT-RwGs07d_2zhak5a3HRb84nFqfnZeCBp0npmekW1s9d5--FaspDrODVS2GXL2RxbHCQCCFVD9_fjWFmA6ORNADMHW1WnRCcvQjTjGTFywww9iTL5QkDD7UaA"/>
+            <!-- Left Side Masking Gradient -->
+            <div class="absolute inset-0 hero-bg-gradient"></div>
+        </div>
+        <!-- Hero Content Section -->
+        <div class="relative z-10 max-w-7xl mx-auto px-8 h-full flex flex-col justify-center">
+            <div class="w-full md:w-3/5 lg:w-1/2 space-y-10">
+                <!-- Trust Line -->
+                <div class="flex items-center gap-4">
+                    <span class="h-[1px] w-8 bg-primary"></span>
+                    <p class="font-label text-xs uppercase tracking-[0.25em] text-on-surface-variant font-bold">
+                        5000+ participants • 20+ cities • National platform
+                    </p>
+                </div>
+                <!-- Headline -->
+                <h1 class="font-headline text-5xl md:text-7xl font-black text-on-surface leading-[1.1] tracking-tighter">
+                    Your <span class="text-primary italic">Big Chance</span> to Enter Modeling, Acting &amp; Bollywood Auditions
+                </h1>
+                <!-- Sub-headline -->
+                <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-xl font-light leading-relaxed">
+                    Join a national audition for modeling, acting &amp; Bollywood with <span class="text-white font-semibold">Urvashi Rautela</span>, with real industry exposure and Grand Finale 2026.
+                </p>
+                <!-- CTA & Countdown Section -->
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                        <div class="space-y-3">
+                            <button class="premium-cta-glow gold-cta-gradient text-black font-headline font-extrabold px-12 py-6 text-lg soft-glow hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-3">
+                                Apply Now – ₹999 <span class="text-xs opacity-80">(Limited)</span>
+                            </button>
+                            <p class="text-on-surface-variant/70 text-sm font-medium flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-lg">verified</span>
+                                Only ₹999 registration fee. Includes grooming, portfolio &amp; finale access.
+                            </p>
+                        </div>
+                        <!-- Countdown Timer Box -->
+                        <div class="bg-surface-container-high/40 backdrop-blur-md border border-primary/20 p-4 rounded-xl flex flex-col gap-1 min-w-[220px]">
+                            <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Grand Finale Countdown</span>
+                            <div class="flex gap-4 text-2xl font-headline font-black text-on-surface">
+                                <div class="flex flex-col items-center">
+                                    <span id="hero-days">000</span>
+                                    <span class="text-[8px] uppercase tracking-tighter text-on-surface-variant -mt-1">Days</span>
+                                </div>
+                                <span class="opacity-30">:</span>
+                                <div class="flex flex-col items-center">
+                                    <span id="hero-hours">00</span>
+                                    <span class="text-[8px] uppercase tracking-tighter text-on-surface-variant -mt-1">Hrs</span>
+                                </div>
+                                <span class="opacity-30">:</span>
+                                <div class="flex flex-col items-center">
+                                    <span id="hero-mins">00</span>
+                                    <span class="text-[8px] uppercase tracking-tighter text-on-surface-variant -mt-1">Mins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instant Credibility Strip -->
+    <div class="relative z-20 bg-surface-container-lowest py-8 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-8 w-full">
+            <div class="flex flex-wrap flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
+                <div class="flex items-center gap-3 px-4 group">
+                    <span class="material-symbols-outlined text-primary text-xl group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <p class="font-label text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-on-surface-variant group-hover:text-primary transition-colors duration-300">5000+ Participants</p>
+                </div>
+                <div class="hidden md:block w-px h-4 bg-white/10"></div>
+                <div class="flex items-center gap-3 px-4 group">
+                    <span class="material-symbols-outlined text-primary text-xl group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                    <p class="font-label text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-on-surface-variant group-hover:text-primary transition-colors duration-300">20+ Cities</p>
+                </div>
+                <div class="hidden md:block w-px h-4 bg-white/10"></div>
+                <div class="flex items-center gap-3 px-4 group">
+                    <span class="material-symbols-outlined text-primary text-xl group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">trophy</span>
+                    <p class="font-label text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-on-surface-variant group-hover:text-primary transition-colors duration-300">National-Level Platform</p>
+                </div>
+                <div class="hidden md:block w-px h-4 bg-white/10"></div>
+                <div class="flex items-center gap-3 px-4 group">
+                    <span class="material-symbols-outlined text-primary text-xl group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">movie</span>
+                    <p class="font-label text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-on-surface-variant group-hover:text-primary transition-colors duration-300">Industry Exposure</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Opportunity Section -->
+    <section class="relative pt-24 pb-32 overflow-hidden bg-background">
+        <!-- Background Atmosphere -->
+        <div class="absolute top-0 left-1/4 w-[800px] h-[800px] light-leak -z-10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-[600px] h-[600px] light-leak -z-10 rounded-full blur-[100px] opacity-50"></div>
+        
+        <!-- Hero Branding Background -->
+        <div class="absolute top-40 left-0 w-full opacity-[0.03] pointer-events-none select-none">
+            <h2 class="text-[20rem] font-black font-headline text-center leading-none tracking-tighter">OPPORTUNITY</h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 space-y-6">
+                <span class="inline-block px-4 py-1.5 bg-surface-container-highest/40 text-primary text-xs font-bold tracking-[0.3em] uppercase rounded-full border border-primary/20 backdrop-blur-sm">
+                    Exclusive Talent Hunt 2024
+                </span>
+                <h1 class="text-6xl md:text-8xl font-black font-headline text-on-surface tracking-tighter text-glow">
+                    The Opportunity
+                </h1>
+                <p class="max-w-2xl mx-auto text-on-surface-variant text-lg md:text-xl font-light leading-relaxed font-body">
+                    DPM Entertainment is conducting a national-level audition and talent hunt for aspiring models and performers. Get real exposure and a chance to move to the national stage — even if you’re just starting out.
+                </p>
+            </div>
+
+            <!-- Bento-Inspired Sleek List Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <!-- Benefit 1 -->
+                <div class="group bg-surface-container-low hover:bg-surface-container transition-all duration-500 p-8 rounded-xl border-b border-transparent hover:border-primary/20 relative overflow-hidden">
+                    <div class="mb-6 inline-flex items-center justify-center w-14 h-14 bg-surface-container-highest rounded-lg">
+                        <span class="material-symbols-outlined text-primary text-3xl">star</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-3 text-white">National audition platform open to all</h3>
+                    <p class="text-on-surface-variant font-body text-sm leading-relaxed">Break geographical barriers and showcase your talent to a pan-India audience of scouts and directors.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="group bg-surface-container-low hover:bg-surface-container transition-all duration-500 p-8 rounded-xl border-b border-transparent hover:border-primary/20 relative overflow-hidden">
+                    <div class="mb-6 inline-flex items-center justify-center w-14 h-14 bg-surface-container-highest rounded-lg">
+                        <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-3 text-white">No experience required – freshers welcome</h3>
+                    <p class="text-on-surface-variant font-body text-sm leading-relaxed">Raw talent is what we seek. We believe every superstar starts with a first audition, regardless of their past.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="group bg-surface-container-low hover:bg-surface-container transition-all duration-500 p-8 rounded-xl border-b border-transparent hover:border-primary/20 relative overflow-hidden">
+                    <div class="mb-6 inline-flex items-center justify-center w-14 h-14 bg-surface-container-highest rounded-lg">
+                        <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-3 text-white">Professional grooming &amp; training included</h3>
+                    <p class="text-on-surface-variant font-body text-sm leading-relaxed">Get mentored by industry experts who will refine your walk, talk, and stage presence for the spotlight.</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="group bg-surface-container-low hover:bg-surface-container transition-all duration-500 p-8 rounded-xl border-b border-transparent hover:border-primary/20 relative overflow-hidden">
+                    <div class="mb-6 inline-flex items-center justify-center w-14 h-14 bg-surface-container-highest rounded-lg">
+                        <span class="material-symbols-outlined text-primary text-3xl">group</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-3 text-white">Open for ages 18–30, male &amp; female</h3>
+                    <p class="text-on-surface-variant font-body text-sm leading-relaxed">A diverse and inclusive platform welcoming talent across all genders within the primary industry age bracket.</p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="group bg-surface-container-low hover:bg-surface-container transition-all duration-500 p-8 rounded-xl border-b border-transparent hover:border-primary/20 relative overflow-hidden">
+                    <div class="mb-6 inline-flex items-center justify-center w-14 h-14 bg-surface-container-highest rounded-lg">
+                        <span class="material-symbols-outlined text-primary text-3xl">photo_camera</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-3 text-white">Portfolio shoot &amp; industry exposure</h3>
+                    <p class="text-on-surface-variant font-body text-sm leading-relaxed">High-end professional photography to build your portfolio and direct introductions to leading production houses.</p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="group bg-surface-container-low hover:bg-surface-container transition-all duration-500 p-8 rounded-xl border-b border-transparent hover:border-primary/20 relative overflow-hidden">
+                    <div class="mb-6 inline-flex items-center justify-center w-14 h-14 bg-surface-container-highest rounded-lg">
+                        <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-3 text-white">Real career-launching opportunity</h3>
+                    <p class="text-on-surface-variant font-body text-sm leading-relaxed">This is not just a competition; it is a gateway to signing professional contracts and starting your journey.</p>
+                </div>
+            </div>
+
+            <!-- Focused Call to Action -->
+            <div class="flex flex-col items-center">
+                <div class="w-full max-w-xl bg-surface-container-high rounded-2xl p-10 text-center relative overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    <h4 class="text-2xl font-bold font-headline mb-4 text-white">Secure Your Spotlight Today</h4>
+                    <p class="text-on-surface-variant font-body mb-8">Early registration ensures your slot in the upcoming regional rounds.</p>
+                    <button class="premium-cta-glow w-full md:w-auto px-16 py-6 premium-gradient-btn text-on-primary font-black text-xl font-headline hover:scale-105 active:scale-95 transition-all duration-300">
+                        Register Now — ₹999
+                    </button>
+                    <p class="mt-6 text-xs font-label uppercase tracking-widest text-on-surface-variant opacity-60">
+                        Limited Slots Available for the 2024 Season
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chief Guest - The Luminary Presence Section -->
+    <section class="relative pt-32 pb-24 overflow-hidden bg-surface-container-lowest">
+        <!-- Ambient Light Leak Background -->
+        <div class="absolute -top-48 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/5 blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[150px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <!-- Section Header - Editorial Style -->
+            <div class="mb-20 text-center md:text-left">
+                <span class="inline-block py-1 px-3 border border-outline-variant/30 text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-4">The Luminary Presence</span>
+                <h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-4 text-white">
+                    CHIEF <span class="text-primary italic">GUEST</span>
+                </h2>
+                <div class="h-1 w-24 cinematic-gradient hidden md:block"></div>
+            </div>
+
+            <!-- Cinematic Spotlight Card -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch bg-surface-container-low overflow-hidden relative group rounded-2xl shadow-2xl">
+                <!-- Image Section: The Spotlight -->
+                <div class="lg:col-span-7 relative h-[500px] lg:h-[750px] overflow-hidden">
+                    <img alt="Urvashi Rautela" class="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArfFcNgh0uD_5UwIc7rEWGAwJNA-EeIbfLUxeGSaEm-6BxN1oxASr7jMruFpUsEa_SB3-WWHdw8BOXUmtrkaoii13REDElYgm2zYq_K8lqRxMUb2rz1OTaOqpdu2HahZJfm1itbOspqk-OBy7rY3NRy3win-EfyDe8NRI1Fj-pmMifCGzHUppu2E-cRsDmUpq6U-b6cM5iKIM29hRV8omkp9H5JXPNIux1GHHrjdCA6SwedFRqDVW3Oh2L-xA4dRy0LQilkIskKK_J"/>
+                    <!-- Gradient Overlays for Depth -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-80 lg:opacity-40"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-surface-container-low hidden lg:block"></div>
+                    <!-- Floating Badge -->
+                    <div class="absolute top-8 left-8 bg-surface-container-highest/90 backdrop-blur-xl border border-primary/20 px-6 py-4 flex flex-col items-center">
+                        <span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Chief Guest</span>
+                        <span class="font-headline text-lg font-bold text-primary">GRAND FINALE 2026</span>
+                    </div>
+                </div>
+
+                <!-- Content Section: The Prestigious Details -->
+                <div class="lg:col-span-5 flex flex-col justify-center p-8 lg:p-16 space-y-8 bg-surface-container-low">
+                    <header>
+                        <h2 class="font-headline text-4xl lg:text-6xl font-black tracking-tighter text-white mb-2">Urvashi Rautela</h2>
+                        <p class="font-label text-primary tracking-[0.1em] text-sm uppercase font-medium">Actor • Model • International Pageant Winner</p>
+                    </header>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="flex-shrink-0 w-10 h-[1px] bg-primary/40"></div>
+                            <p class="font-body text-on-surface-variant text-sm leading-relaxed">
+                                Miss Diva Universe 2015 • Femina Miss India 2015
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <p class="font-body text-lg text-on-surface/90 leading-relaxed">
+                                Urvashi Rautela will be present at the Grand Finale 2026, adding a special moment to the event.
+                            </p>
+                            <p class="font-body text-on-surface-variant/80 leading-relaxed italic border-l-2 border-primary-container pl-6 py-2">
+                                This national audition gives you a chance to participate in a real platform and experience the journey toward the Grand Finale.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-8">
+                        <a class="inline-flex items-center group/btn relative" href="#">
+                            <div class="absolute -inset-2 cinematic-gradient blur-xl opacity-0 group-hover/btn:opacity-20 transition-opacity duration-500"></div>
+                            <div class="premium-cta-glow relative flex items-center bg-transparent border border-primary text-primary px-12 py-6 font-headline font-bold text-xs tracking-widest uppercase transition-all duration-500 hover:bg-primary hover:text-on-primary">
+                                Get Crowned by Urvashi Rautela
+                                <span class="material-symbols-outlined ml-4 text-lg">workspace_premium</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Asymmetric Support Grid -->
+            <div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-12 text-white">
+                <div class="space-y-4">
+                    <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <h4 class="font-headline font-bold text-xl uppercase tracking-tighter">Iconic Presence</h4>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">Experience a once-in-a-lifetime mentorship with the international beauty queen who redefined Indian pageantry.</p>
+                </div>
+                <div class="space-y-4">
+                    <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">movie</span>
+                    <h4 class="font-headline font-bold text-xl uppercase tracking-tighter">Cinematic Journey</h4>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">Bridge the gap between auditions and Bollywood. DPM Entertainment creates pathways to professional artistry.</p>
+                </div>
+                <div class="space-y-4">
+                    <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    <h4 class="font-headline font-bold text-xl uppercase tracking-tighter">Elite Recognition</h4>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">Stand in the spotlight of the Grand Finale 2026 and get recognized by the very best in the entertainment industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Big Rewards - Editorial Luxe Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden bg-black">
+        <!-- Ambient Light Leaks -->
+        <div class="absolute top-[-10%] right-[-10%] w-[1000px] h-[1000px] cinematic-glow pointer-events-none opacity-60"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] cinematic-glow pointer-events-none opacity-40"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] cinematic-glow pointer-events-none opacity-20"></div>
+
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="mb-24 text-center max-w-4xl mx-auto">
+                <span class="inline-block text-primary font-label text-xs tracking-[0.5em] uppercase mb-6 font-bold">The Luminary Program</span>
+                <h2 class="text-7xl md:text-9xl font-headline font-black text-on-surface tracking-tighter leading-[0.9] mb-10 text-shadow-gold italic">
+                    BIG REWARDS.<br/><span class="text-transparent bg-clip-text gold-gradient">LEGACY BUILT.</span>
+                </h2>
+                <p class="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed max-w-2xl mx-auto opacity-80">
+                    Step into the spotlight. We aren't just looking for talent; we're building the next generation of icons.
+                </p>
+            </div>
+
+            <!-- High-End Bento Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-24">
+                <!-- Main Featured Reward: Win Prizes -->
+                <div class="md:col-span-8 group relative overflow-hidden bg-surface-container-lowest rounded-xl p-12 flex flex-col justify-end min-h-[500px] border border-outline-variant/10">
+                    <div class="absolute inset-0 z-0 group-hover:scale-105 transition-transform duration-1000 ease-out" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFxANOQNi6BnhszYAMtnK-WE6JujKtFjdTwlYKWcqOHOivd0n8-80RpNtTqOsCDUfhQsX9JhWJzJNyYAsiYsgCuFZ0TMlBd00zbvb1-vqJjSm3RbmoA_S634tNtV9_TVntTObddQ1a-jVzXQjWviy-y_IeLWarFWQrAKCkFrvtXWEuXfAqaWxrsQQqIrxKMb9_GkN1qvcQmSWEZpu4KhCocsWyK3fGu1fBI06vhfFy1OyNaoB8yMCR5cxXVyr8_WO7jqEnLaQ1nFV-'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-[1px] bg-primary"></div>
+                            <span class="font-label text-xs tracking-widest uppercase font-bold text-primary">Master Tier Reward</span>
+                        </div>
+                        <h3 class="text-5xl md:text-6xl font-headline font-black text-white mb-6 leading-tight">Win Prizes Worth<br/><span class="text-primary">₹10,00,000+</span></h3>
+                        <p class="text-on-surface-variant text-xl max-w-lg mb-8 font-light">The ultimate recognition for the industry's most promising rising stars.</p>
+                        <div class="flex items-center gap-2 text-[10px] font-label text-white/30 uppercase tracking-[0.2em]">
+                            <span class="material-symbols-outlined text-sm">verified</span>
+                            Authentic Luminary Certification
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Rewards Grid -->
+                <div class="md:col-span-4 flex flex-col gap-6">
+                    <!-- International Trip -->
+                    <div class="flex-1 glass-panel rounded-xl p-8 border border-outline-variant/20 hover:border-primary/40 transition-all group">
+                        <div class="flex justify-between items-start mb-10">
+                            <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+                                <span class="material-symbols-outlined text-3xl">flight_takeoff</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-primary tracking-widest uppercase py-1 px-3 border border-primary/30 rounded-full">Global</span>
+                        </div>
+                        <h3 class="text-2xl font-headline font-bold text-white mb-3">World Tour Vouchers</h3>
+                        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Experience global luxury with exclusive international travel opportunities for top performers.</p>
+                    </div>
+                    <!-- Contract -->
+                    <div class="flex-1 glass-panel rounded-xl p-8 border border-outline-variant/20 hover:border-primary/40 transition-all">
+                        <div class="flex justify-between items-start mb-10">
+                            <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+                                <span class="material-symbols-outlined text-3xl">history_edu</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-headline font-bold text-white mb-3">1-Year In-House Deal</h3>
+                        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Guaranteed placement in upcoming high-budget web series, movies, and fashion campaigns.</p>
+                    </div>
+                </div>
+
+                <!-- Oversized Brand Ambassador Feature -->
+                <div class="md:col-span-12 relative overflow-hidden rounded-2xl p-1 md:p-[1px] gold-gradient mt-6">
+                    <div class="bg-[#0e0e0e] rounded-[15px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+                        <!-- Abstract Background for Card -->
+                        <div class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
+                            <span class="material-symbols-outlined text-[30rem] -mr-40 -mt-20 text-primary rotate-12">auto_awesome</span>
+                        </div>
+                        <div class="max-w-2xl relative z-10 text-center md:text-left">
+                            <div class="inline-flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full border border-primary/20 mb-8">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                                </span>
+                                <span class="text-primary font-label text-xs font-bold tracking-[0.2em] uppercase">Limited Ambassador Slots</span>
+                            </div>
+                            <h3 class="text-5xl md:text-7xl font-headline font-black text-white mb-6 tracking-tight leading-tight uppercase italic">
+                                Become a <br/>
+                                <span class="text-transparent bg-clip-text gold-gradient">Brand Ambassador</span>
+                            </h3>
+                            <p class="text-xl text-on-surface-variant font-light mb-4">The ultimate career accelerator. Gain direct access to Bollywood's elite circle and represent the Cinematic Luminary brand globally.</p>
+                        </div>
+                        <div class="flex-shrink-0 w-full md:w-auto relative z-10">
+                            <button class="premium-cta-glow w-full md:w-[360px] gold-gradient text-on-primary py-7 px-12 font-headline font-black text-xl active:scale-95 transform transition-all group relative overflow-hidden">
+                                <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-[-20deg]"></div>
+                                <span class="relative z-10 tracking-[0.1em]">CLAIM SPOT — ₹999</span>
+                            </button>
+                            <p class="text-center mt-6 text-white/30 text-xs tracking-widest uppercase">Only 50 seats remaining this cycle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bollywood Access Item -->
+                <div class="md:col-span-12 glass-panel rounded-xl p-10 border border-outline-variant/10 flex flex-col md:flex-row items-center gap-8 justify-center text-center md:text-left mt-6">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 flex-shrink-0">
+                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-headline font-bold text-white mb-2">Tier-1 Industry Network</h3>
+                        <p class="text-on-surface-variant text-lg font-light">Collaborate directly with renowned directors, casting agents, and A-list performers across the nation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supporting Text/CTA -->
+            <div class="mt-32 text-center relative">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] cinematic-glow opacity-30 pointer-events-none"></div>
+                <div class="flex justify-center items-center gap-6 mb-10 relative z-10">
+                    <div class="h-[1px] w-20 bg-primary/40"></div>
+                    <span class="font-label text-sm tracking-[0.4em] text-primary/80 uppercase font-bold">The Stage Awaits</span>
+                    <div class="h-[1px] w-20 bg-primary/40"></div>
+                </div>
+                <p class="text-5xl md:text-7xl font-headline font-black text-white/20 tracking-tighter uppercase mb-4 italic">Ready to make your mark?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Stack Section -->
+    <section class="relative pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden bg-black">
+        <!-- Background Light Leak -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 light-leak pointer-events-none"></div>
+        <div class="absolute top-1/2 -left-48 w-[600px] h-[600px] light-leak pointer-events-none"></div>
+        
+        <!-- Section Header -->
+        <div class="mb-20 text-center md:text-left relative z-10">
+            <h2 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6">
+                Extra <span class="text-primary italic">Benefits</span> You Get — Free
+            </h2>
+            <p class="font-body text-on-surface-variant max-w-2xl text-lg md:text-xl leading-relaxed">
+                Elevate your cinematic journey with our exclusive collection of industry resources, tailored for the elite.
+            </p>
+        </div>
+
+        <!-- Horizontal Split Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
+            <!-- Left: Bonus Cards Stack -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <!-- Benefit 1 -->
+                <div class="group bg-surface-container-low p-8 rounded-xl gold-border hover:bg-surface-container-high transition-all duration-500 flex gap-6 items-start">
+                    <div class="hidden sm:flex shrink-0 w-16 h-16 rounded-full bg-surface-container-highest items-center justify-center text-primary border border-primary/20">
+                    <span class="material-symbols-outlined text-3xl">stars</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="text-primary font-label tracking-[0.2em] text-[11px] uppercase font-bold">Bonus 01</span>
+                            <span class="font-label text-xs tracking-widest text-primary/80 font-bold bg-primary/10 px-2 py-1 rounded">WORTH ₹3000</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-on-surface mb-3">VIP Finale Access</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed max-w-lg">Experience the glamour from the front row. Premium seating and exclusive backstage networking opportunities included.</p>
+                    </div>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="group bg-surface-container-low p-8 rounded-xl gold-border hover:bg-surface-container-high transition-all duration-500 flex gap-6 items-start">
+                    <div class="hidden sm:flex shrink-0 w-16 h-16 rounded-full bg-surface-container-highest items-center justify-center text-primary border border-primary/20">
+                    <span class="material-symbols-outlined text-3xl">auto_stories</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="text-primary font-label tracking-[0.2em] text-[11px] uppercase font-bold">Bonus 02</span>
+                            <span class="font-label text-xs tracking-widest text-primary/80 font-bold bg-primary/10 px-2 py-1 rounded">WORTH ₹2000</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Exclusive Pageant Guide</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed max-w-lg">The ultimate insider's handbook to mastering stage presence, interview skills, and cinematic poise.</p>
+                    </div>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="group bg-surface-container-low p-8 rounded-xl gold-border hover:bg-surface-container-high transition-all duration-500 flex gap-6 items-start">
+                    <div class="hidden sm:flex shrink-0 w-16 h-16 rounded-full bg-surface-container-highest items-center justify-center text-primary border border-primary/20">
+                    <span class="material-symbols-outlined text-3xl">brush</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="text-primary font-label tracking-[0.2em] text-[11px] uppercase font-bold">Bonus 03</span>
+                            <span class="font-label text-xs tracking-widest text-primary/80 font-bold bg-primary/10 px-2 py-1 rounded">WORTH ₹4000</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Grooming Resource Kit</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed max-w-lg">Comprehensive video masterclasses and digital resources for professional aesthetic and presence maintenance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Sophisticated Pricing Column -->
+            <div class="lg:col-span-5">
+                <div class="h-full bg-surface-container-low rounded-xl gold-border p-1">
+                    <div class="h-full bg-surface-container-lowest rounded-lg p-10 flex flex-col justify-center items-center text-center relative overflow-hidden">
+                        <!-- Decorative element -->
+                        <div class="absolute inset-0 bg-primary/5 blur-[100px] rounded-full"></div>
+                        <div class="relative z-10 w-full">
+                            <h4 class="font-label tracking-[0.4em] text-[11px] text-primary uppercase font-bold mb-10 border-b border-primary/20 pb-4 inline-block">Unbeatable Value</h4>
+                            <div class="flex flex-col gap-2 mb-12">
+                                <span class="font-headline text-2xl text-on-surface-variant/60 line-through decoration-primary/40 decoration-2">Total Value: ₹9,000+</span>
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-on-surface text-sm font-label tracking-widest uppercase mb-2">You Pay Only</span>
+                                    <span class="font-headline text-7xl md:text-8xl font-black text-primary tracking-tighter text-glow drop-shadow-2xl">₹999</span>
+                                </div>
+                            </div>
+                            <button class="premium-cta-glow w-full bg-gradient-to-br from-primary to-primary-container text-on-primary px-12 py-7 font-headline font-black text-xl uppercase tracking-tighter transition-all duration-500 active:scale-[0.98] group">
+                                <span class="flex items-center justify-center gap-3">
+                                    Get Everything
+                                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                                </span>
+                            </button>
+                            <p class="mt-8 font-label text-on-surface-variant text-[10px] tracking-[0.3em] uppercase opacity-60">Limited slots available for this batch</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Proof / Trust -->
+        <div class="mt-24 flex flex-wrap justify-center gap-12 opacity-30 grayscale contrast-150">
+            <span class="font-headline font-bold text-2xl tracking-widest uppercase text-on-surface">VOGUE</span>
+            <span class="font-headline font-bold text-2xl tracking-widest uppercase text-on-surface">BAZAAR</span>
+            <span class="font-headline font-bold text-2xl tracking-widest uppercase text-on-surface">FILMFARE</span>
+            <span class="font-headline font-bold text-2xl tracking-widest uppercase text-on-surface">COSMO</span>
+        </div>
+    </section>
+
+    <!-- The Prestigious Journey Section -->
+    <section class="relative py-24 bg-surface-container-lowest overflow-hidden">
+        <!-- Ambient Decor -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] light-leak opacity-40 -mr-96 -mt-96 pointer-events-none"></div>
+        <div class="absolute bottom-1/4 left-0 w-[600px] h-[600px] light-leak opacity-20 -ml-48 pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] light-leak opacity-10 pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 md:px-12">
+            <div class="mb-20 text-center">
+                <span class="font-label text-primary tracking-[0.4em] uppercase text-xs mb-4 block">DPM Entertainment Presents</span>
+                <h2 class="font-headline text-5xl md:text-8xl font-black text-on-surface tracking-tighter leading-tight mb-6">THE PRESTIGIOUS<br/><span class="text-primary italic">JOURNEY</span></h2>
+                <p class="max-w-2xl mx-auto text-on-surface-variant font-body text-lg leading-relaxed">From a spark of talent to global recognition. Discover the curated path designed to unveil the next cinematic luminary.</p>
+            </div>
+
+            <!-- Vertical Depth Journey - Centered -->
+            <div class="relative space-y-24 pb-32">
+                <!-- Vertical Progress Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/5 to-transparent -translate-x-1/2"></div>
+                
+                <!-- Step 01 -->
+                <div class="relative group flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="w-full md:w-1/2 flex justify-center md:justify-end text-center md:text-right order-2 md:order-1">
+                        <div class="max-w-md px-4">
+                            <h3 class="font-headline text-3xl font-bold text-primary mb-4">Register</h3>
+                            <p class="text-on-surface-variant text-lg">Begin your legacy. Pay ₹999 and fill your audition form to secure your spot in history.</p>
+                        </div>
+                    </div>
+                    <div class="relative z-10 w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-surface-container-highest rounded-full border border-primary/20 gold-glow order-1 md:order-2">
+                        <span class="font-headline text-3xl md:text-4xl font-black text-primary">01</span>
+                    </div>
+                    <div class="w-full md:w-1/2 order-3 px-4">
+                        <div class="aspect-video w-full max-w-sm mx-auto md:mx-0 rounded-xl bg-surface-container-high overflow-hidden shadow-2xl relative border border-white/5">
+                            <img class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVhQSiBJDn0WIvafH-ghk5r-9hLSWNBkw5qmkl1jY9xVP4ej3fAEjrMJXWgZMivKCZg6vatjRmMo2GNeFBRXqEBIYXS7DtAfrulcgrXNOW5emp1paF20Kj45qNGK2kUEB519SPKhh36OzCZO79fKnuoBEEsBnGrJZPN9sqooTEIENegBePzVdrHJSH6X71r10PhjF7_50aUqamAq0gy6ApnG_JuTlrSMuyGjEZ4KzoQmRizVhHQH4aW81MKfeBvGwnRim7F2EMKEas" alt="Registration Process"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="relative group flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="w-full md:w-1/2 flex justify-center md:justify-end order-3 md:order-1 px-4">
+                        <div class="aspect-video w-full max-w-sm mx-auto md:mx-0 md:ml-auto rounded-xl bg-surface-container-high overflow-hidden shadow-2xl relative border border-white/5">
+                            <img class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzVJA_-O5b3tUlUGnIfGbdgwxgxpLmdrqMNgcj904jfvojLb7crp9ZPBDgRJvOHIuL9sdkDUkfGWTdf_ujWGkSyPPOi1e2hWJeMaqq3BS4l37ISMU7CeLxhQjCyxJvcjvORHqFamkTiTgFP32wsCZqFW7B-gpFszk0Fjj3Z1P0iQ23VRyqp11tILKaltzWarnJrUB10a9erugnimYJtvlS5RbhCp3yXPdV8W4LJQao7Z7BcOZQzT1Kf1DQxe9Agd-3LD0YpSKFLizh" alt="Audition Day"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        </div>
+                    </div>
+                    <div class="relative z-10 w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-surface-container-highest rounded-full border border-primary/20 gold-glow order-1 md:order-2">
+                        <span class="font-headline text-3xl md:text-4xl font-black text-primary">02</span>
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left order-2 md:order-3">
+                        <div class="max-w-md px-4">
+                            <h3 class="font-headline text-3xl font-bold text-primary mb-4">Audition</h3>
+                            <p class="text-on-surface-variant text-lg">Step into the limelight. Attend live auditions in your nearest city and showcase your raw craft to the world.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="relative group flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="w-full md:w-1/2 flex justify-center md:justify-end text-center md:text-right order-2 md:order-1">
+                        <div class="max-w-md px-4">
+                            <h3 class="font-headline text-3xl font-bold text-primary mb-4">Shortlisting</h3>
+                            <p class="text-on-surface-variant text-lg">The refined selection. Get shortlisted by a jury of industry experts and veteran directors.</p>
+                        </div>
+                    </div>
+                    <div class="relative z-10 w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-surface-container-highest rounded-full border border-primary/20 gold-glow order-1 md:order-2">
+                        <span class="font-headline text-3xl md:text-4xl font-black text-primary">03</span>
+                    </div>
+                    <div class="w-full md:w-1/2 order-3 px-4">
+                        <div class="aspect-video w-full max-w-sm mx-auto md:mx-0 rounded-xl bg-surface-container-high overflow-hidden shadow-2xl relative border border-white/5">
+                            <img class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7sVMvxroG4UKjzopjNu50YXMZdadEUdO_zRCslH13pPEop6AywNMk42PIOVvWFQ6CLv6WRjD14oL3u32i_CQMybn3AOuc1QblTw9O03_Nv-Rn_fQI91mItt9AHdPqAAO4Az14Al1B9KmXtr3Ih8I_sxV-WddXqlgMNGQAh2H1HS_uKevOPpzd2-yEBs1LDdjAJPtbAhpW6ceCIaan_9hKQ-WeGgAfu5aoGPONeWHo_4p3Dzhgkeygw_v8bYmhhwxGfZjrzjrQQvIN" alt="Jury Selection"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="relative group flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="w-full md:w-1/2 flex justify-center md:justify-end order-3 md:order-1 px-4">
+                        <div class="aspect-video w-full max-w-sm mx-auto md:mx-0 md:ml-auto rounded-xl bg-surface-container-high overflow-hidden shadow-2xl relative border border-white/5">
+                            <img class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWGDK19B46hry9GucmMeUmf2TvJ5AE5jkgqy4DIz3oak26cKRkDNjjtDIzS5AMozczeAdM6sKQF2SPtOqpcaoFOJ3hCNhhv0__bGhKCtx7IAHjK-54P4ViV_3rMfslmeKysQzlps6fc2vsWUFA_ZJwy3lywffNO-lvCt_OmhkXseP9h7uWVchEs_X91YdVArHb8fCKIFb-FDG0TIfFVCesSeQgY7UNaEHi-p6mqjOU4OOxzaKPhqzXKTRlymSURuG9ep0KRqfuK5lY" alt="Grand Finale"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        </div>
+                    </div>
+                    <div class="relative z-10 w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-surface-container-highest rounded-full border border-primary/20 gold-glow order-1 md:order-2">
+                        <span class="font-headline text-3xl md:text-4xl font-black text-primary">04</span>
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left order-2 md:order-3">
+                        <div class="max-w-md px-4">
+                            <h3 class="font-headline text-3xl font-bold text-primary mb-2">Grand Finale</h3>
+                            <p class="font-headline text-primary-container text-xl tracking-[0.2em] mb-4">31 AUGUST 2026</p>
+                            <p class="text-on-surface-variant text-lg">The crowning moment. Where legends are made and the next face of cinema is revealed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="relative mt-24 text-center">
+                <div class="absolute inset-0 flex items-center justify-center opacity-50 blur-[100px] pointer-events-none">
+                    <div class="w-64 h-64 bg-primary rounded-full"></div>
+                </div>
+                <div class="relative z-10">
+                    <button class="premium-cta-glow group inline-flex items-center gap-6 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline text-xl font-black px-12 md:px-16 py-6 md:py-7 hover:scale-105 active:scale-95 transition-all">
+                        Start Your Journey — ₹999
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                    </button>
+                    <p class="mt-8 font-label text-[10px] tracking-[0.3em] uppercase text-white/40">Secure Your Legacy. Limited Slots per City.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Proof - Colorized Luxe 1 Section -->
+    <section class="relative pt-32 pb-32 overflow-hidden bg-black">
+        <!-- Aureum Noir Lighting Effects -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-[radial-gradient(circle_at_center,_rgba(242,202,80,0.08)_0%,_transparent_70%)] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-20 relative z-10">
+            <h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter text-reveal mb-6 uppercase italic leading-[0.9]">
+                SEE WHAT<br/>ACTUALLY HAPPENS
+            </h2>
+            <p class="font-headline text-primary/80 text-sm md:text-base max-w-xl mx-auto tracking-[0.3em] font-bold uppercase mb-12">
+                Candid Reality. Professional Precision.
+            </p>
+        </div>
+
+        <!-- Authentic Event Documentary Slider Container -->
+        <div class="relative space-y-4 mb-32 mask-edges">
+            <!-- Slider 1: Left to Right -->
+            <div class="flex overflow-hidden">
+                <div class="flex animate-scroll-left gap-4 pr-4">
+                    <!-- Repeated tiles for seamless loop -->
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_0912.JPG" alt="Event Documentary 1"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_0915.JPG" alt="Event Documentary 2"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_0986.JPG" alt="Event Documentary 3"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_1031.JPG" alt="Event Documentary 4"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_1188.JPG" alt="Event Documentary 5"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_2011.JPG" alt="Event Documentary 6"/>
+                    </div>
+                    <!-- Duplicate for loop -->
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover" src="./images/IMG_0912.JPG" alt="Loop 1"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover" src="./images/IMG_0915.JPG" alt="Loop 2"/>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider 2: Right to Left -->
+            <div class="flex overflow-hidden">
+                <div class="flex animate-scroll-right gap-4 pr-4">
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_3093.JPG" alt="Event Documentary 7"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_3382.JPG" alt="Event Documentary 8"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_3574.JPG" alt="Event Documentary 9"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_3603.JPG" alt="Event Documentary 10"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_3663.JPG" alt="Event Documentary 11"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="./images/IMG_3668.JPG" alt="Event Documentary 12"/>
+                    </div>
+                    <!-- Duplicate for loop -->
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover" src="./images/IMG_3093.JPG" alt="Loop 3"/>
+                    </div>
+                    <div class="flex-none w-64 h-44 md:w-80 md:h-56 border border-white/10 rounded-lg overflow-hidden relative group">
+                        <img class="w-full h-full object-cover" src="./images/IMG_3382.JPG" alt="Loop 4"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Refinement -->
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+                    <div class="space-y-3">
+                        <span class="material-symbols-outlined text-primary text-3xl">videocam</span>
+                        <h4 class="text-white font-headline font-bold text-lg uppercase tracking-tight">Auditions happening</h4>
+                        <p class="text-sm text-on-surface-variant font-medium leading-relaxed">Watch raw talent unfold in real-time under professional lights.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="material-symbols-outlined text-primary text-3xl">groups</span>
+                        <h4 class="text-white font-headline font-bold text-lg uppercase tracking-tight">Judges interacting</h4>
+                        <p class="text-sm text-on-surface-variant font-medium leading-relaxed">Direct mentorship and honest feedback from industry legends.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="material-symbols-outlined text-primary text-3xl">theater_comedy</span>
+                        <h4 class="text-white font-headline font-bold text-lg uppercase tracking-tight">Stage performances</h4>
+                        <p class="text-sm text-on-surface-variant font-medium leading-relaxed">Full-scale cinematic productions featuring our elite artists.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="material-symbols-outlined text-primary text-3xl">movie_filter</span>
+                        <h4 class="text-white font-headline font-bold text-lg uppercase tracking-tight">Behind-the-scenes</h4>
+                        <p class="text-sm text-on-surface-variant font-medium leading-relaxed">The sweat, the tears, and the triumph of digital couture prep.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface-container-low p-12 rounded-2xl border border-white/5 relative overflow-hidden group">
+                <div class="absolute -top-32 -right-32 w-64 h-64 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition-colors"></div>
+                <p class="font-headline text-3xl text-white mb-10 leading-[1.1] italic font-bold tracking-tight">
+                    "What You See Is Real.<br/><span class="text-primary">This is your chance</span> to be a part of it."
+                </p>
+                <div class="flex flex-col gap-6">
+                    <button class="premium-cta-glow w-full bg-gradient-to-br from-[#f2ca50] via-[#e9c349] to-[#d4af37] text-black font-black py-7 px-12 text-xl tracking-tighter hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-4 group/btn">
+                        CLAIM YOUR SPOT — ₹999
+                        <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-2">trending_flat</span>
+                    </button>
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="h-px flex-1 bg-white/10"></div>
+                        <p class="text-primary text-[10px] uppercase tracking-[0.4em] font-black">Limited Exclusive Access</p>
+                        <div class="h-px flex-1 bg-white/10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials - Elegant Masonry Grid Section -->
+    <section class="relative pt-32 pb-32 px-6 md:px-12 overflow-hidden bg-surface-container-lowest">
+        <!-- Ambient Light Leaks -->
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-[0%] right-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+        
+        <!-- Header Section -->
+        <header class="max-w-4xl mx-auto text-center mb-24 relative z-10">
+            <span class="inline-block label-md tracking-[0.4em] uppercase text-primary mb-6">Testimonials</span>
+            <h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter leading-none mb-8 text-white">What Participants Say</h2>
+            <p class="font-body text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Real experiences from people who have already taken the stage.
+            </p>
+        </header>
+
+        <!-- Testimonials Masonry Grid -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 relative z-10">
+            <!-- Riya Sharma Card -->
+            <div class="lg:col-span-5 glass-card p-10 rounded-xl border border-primary/10 flex flex-col justify-between group hover:border-primary/30 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)]">
+                <div>
+                    <span class="material-symbols-outlined text-primary mb-8 block text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                    <p class="font-body text-xl md:text-2xl leading-snug text-on-surface mb-10">“I had never done anything like this before. The audition gave me confidence and helped me understand how the industry works. It was a great first step for me.”</p>
+                </div>
+                <div class="flex items-center gap-4 border-t border-outline-variant/15 pt-8">
+                    <div class="w-12 h-12 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 ring-1 ring-primary/20">
+                        <img alt="Riya Sharma" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-9yuH4XhAByMb_dlqIaq53SsYkm8WYLS6JiYY0YxlzLJ1iTzGqYArjsM9Su0dcVu8jUsWCwCu90SPOdk7gRfKU9zitHOpLi996IDfec8mDOeUNZ_DXGgjJVeYvggrA_ljZfdZqLoGIChrhHML03IrcbibJFyHlBjgOgRZcBhUR2KoOByg-icjVOjhBQUD-iNRxi16DfvYsd_0y6j6Meq7Zt0S0aWCScGeml55S7STZP1ohduFFBX3gg72H68efRSl--FXuo-65ykx"/>
+                    </div>
+                    <div>
+                        <h4 class="font-headline font-bold text-lg text-primary tracking-tight">Riya Sharma</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Delhi • Aspiring Luminary</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aman Verma Card -->
+            <div class="lg:col-span-7 glass-card p-10 rounded-xl border border-primary/10 flex flex-col justify-between group hover:border-primary/30 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)]">
+                <div>
+                    <span class="material-symbols-outlined text-primary mb-8 block text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                    <p class="font-body text-xl md:text-2xl leading-snug text-on-surface mb-10">“The experience was very professional. From the audition to the guidance, everything felt real. I also got to meet people from the industry.”</p>
+                </div>
+                <div class="flex items-center gap-4 border-t border-outline-variant/15 pt-8">
+                    <div class="w-12 h-12 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 ring-1 ring-primary/20">
+                        <img alt="Aman Verma" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-VcxTPkMqppXp3Ncwxlww0Ia9vaYE_ukzljGf7WuAaWZdxzYDZ595rJ5t2WlJMMOOpHs4oCEW1jDdiRZwFoYg6c4hWVPopbV9lrxCIAo_X7JUQfFGjlXhjMSWRQehKsg1jZxlRjXM6f3-ZrlCuw-tBIz_8qfwnHzSVxkHITd6EvqFXJmjRXaCREqNyGWmVJ_beej0XcC2ChXQ75-wJF557OpMyj2aRmHr5och0DqL-vqHZKsddrJoUaODZZRLbmv1xfULxXUxL7cQ"/>
+                    </div>
+                    <div>
+                        <h4 class="font-headline font-bold text-lg text-primary tracking-tight">Aman Verma</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Mumbai • Professional Talent</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neha Kapoor Card -->
+            <div class="lg:col-span-7 glass-card p-10 rounded-xl border border-primary/10 flex flex-col justify-between group hover:border-primary/30 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)]">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <span class="material-symbols-outlined text-primary mb-6 block text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                        <p class="font-body text-lg leading-relaxed text-on-surface mb-8">“I was nervous at first, but the support and environment made it easier. I learned a lot and felt more confident after the audition.”</p>
+                        <div class="pt-6 border-t border-outline-variant/15">
+                            <h4 class="font-headline font-bold text-lg text-primary tracking-tight">Neha Kapoor</h4>
+                            <p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Jaipur • New Face</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2 h-64 w-full rounded-lg overflow-hidden">
+                        <img alt="Neha Kapoor" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg7B6osPS7NG4vi0uYBniM8wNa6uQcfJyXA51PSYGMtKD-uRztPPIMQhYXHTmWPVjKDn87RFfk9wzZ8rUPS_vKHARtlBHFZkgdmznxkfL8axa-dYC3TReNy_D1t7lgp6pbEK3DaHCNJREPskHczza4weyBVVK-FIVmc4OARxk1DxKw5QtLQfvyB1uiXC2Gf0BRf1pnsGW1vj3cktU_4wosFiVCaw2bCgajgjZZwJXpTuUhs9p68j0bpqir8IjSdAzemTCLd50bOQTD"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rahul Singh Card -->
+            <div class="lg:col-span-5 glass-card p-10 rounded-xl border border-primary/10 flex flex-col justify-between group hover:border-primary/30 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] bg-gradient-to-br from-surface-container/60 to-surface-container-low/80">
+                <div>
+                    <span class="material-symbols-outlined text-primary mb-8 block text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                    <p class="font-body text-xl md:text-2xl leading-snug text-on-surface mb-10">“It’s a genuine platform. The process was fair, and the exposure I got was really helpful for my journey.”</p>
+                </div>
+                <div class="flex items-center gap-4 border-t border-outline-variant/15 pt-8">
+                    <div class="w-12 h-12 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 ring-1 ring-primary/20">
+                        <img alt="Rahul Singh" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw1Nc6WT-21hXnQbGCKOYQ24LK_94TlK_PxXdzR8xlqwQYdbIKeISrH3yhmInz0z7eOh3-T1e_snGXwQbwL-ka59Z7fwqFY3criElZsF4oqrj7wIYaCjGUtqC2VeEhjA-uzodnHGMm6SB8JYIym0dC27XqS8v6at8-IKTGrAfbWTiJ8UMwy8TY52OE3agfEhpI7WSpTfaRPWbqpbaThLmpt3wuGpOIOwGeUTH2hvUatYgXtsg1se2DMdUqhGhOIq81gs9HqHCD2Au6"/>
+                    </div>
+                    <div>
+                        <h4 class="font-headline font-bold text-lg text-primary tracking-tight">Rahul Singh</h4>
+                        <p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Delhi • Trailblazer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Section (Motivational) -->
+        <section class="max-w-4xl mx-auto mt-32 text-center relative z-10">
+            <div class="inline-block w-24 h-[1px] bg-primary/30 mb-12"></div>
+            <h2 class="font-headline text-4xl md:text-5xl font-black mb-8 italic tracking-tight text-white/90">Start your journey like them.</h2>
+            <div class="flex flex-col items-center gap-6">
+                <button class="premium-cta-glow group relative px-16 py-6 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-extrabold tracking-[0.15em] transition-all duration-300 active:scale-95">
+                    REGISTER NOW — ₹999
+                </button>
+                <p class="text-[10px] uppercase tracking-[0.3em] text-on-surface-variant font-medium">Limited slots available for the next season</p>
+            </div>
+        </section>
+
+        <!-- Urgency - Cinematic High-Glow Section -->
+        <section class="relative py-32 overflow-hidden bg-black flex flex-col items-center justify-center text-center">
+            <!-- Cinematic Spotlights -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] radial-spotlight pointer-events-none opacity-50"></div>
+            <div class="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+            <div class="absolute top-1/2 -right-20 w-[400px] h-[400px] bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto px-6 relative z-10 w-full">
+                <!-- Prestige Header -->
+                <div class="mb-16">
+                    <div class="flex items-center justify-center gap-4 mb-6">
+                        <div class="h-px w-12 bg-gradient-to-r from-transparent to-primary/40"></div>
+                        <span class="text-[11px] uppercase tracking-[0.5em] text-primary font-semibold">Limited Opportunity</span>
+                        <div class="h-px w-12 bg-gradient-to-l from-transparent to-primary/40"></div>
+                    </div>
+                    <h2 class="font-headline text-6xl md:text-8xl font-black mb-6 tracking-tighter leading-tight text-white">
+                        A FINAL <span class="text-transparent bg-clip-text metallic-gradient">INVITATION.</span>
+                    </h2>
+                    <p class="max-w-xl mx-auto text-on-surface-variant font-body text-lg font-light leading-relaxed mb-12">
+                        Reserved for the exceptional. This exclusive registration window represents the final intake for the upcoming cinematic season.
+                    </p>
+
+                    <!-- Countdown Timer Gold Aura -->
+                    <div class="inline-flex items-center justify-center gap-6 md:gap-12 gold-aura py-8 px-12 glass-premium rounded-3xl border-primary/20 shadow-2xl">
+                        <div class="flex flex-col items-center">
+                            <span id="urgency-days" class="font-headline text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-2">00</span>
+                            <span class="text-[9px] uppercase tracking-[0.3em] text-primary/70 font-bold">Days</span>
+                        </div>
+                        <div class="text-4xl md:text-6xl font-black text-primary/30">:</div>
+                        <div class="flex flex-col items-center">
+                            <span id="urgency-hours" class="font-headline text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-2">00</span>
+                            <span class="text-[9px] uppercase tracking-[0.3em] text-primary/70 font-bold">Hours</span>
+                        </div>
+                        <div class="text-4xl md:text-6xl font-black text-primary/30">:</div>
+                        <div class="flex flex-col items-center">
+                            <span id="urgency-mins" class="font-headline text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-2">00</span>
+                            <span class="text-[9px] uppercase tracking-[0.3em] text-primary/70 font-bold">Mins</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Scarcity Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-20">
+                    <!-- Card 1 -->
+                    <div class="glass-premium p-10 text-left transition-all duration-700 group flex flex-col gap-6 relative overflow-hidden rounded-2xl">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <span class="material-symbols-outlined text-8xl">location_on</span>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+                        <div>
+                            <h3 class="font-headline text-lg font-bold mb-4 uppercase tracking-wider text-white">Regional Exclusivity</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed font-light">Capacity is capped strictly by city. We prioritize intimate talent clusters to guarantee industry-leading representation.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass-premium p-10 text-left transition-all duration-700 group flex flex-col gap-6 relative overflow-hidden rounded-2xl border-primary/30">
+                        <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-all duration-1000 scale-110 group-hover:scale-100">
+                            <img alt="Luxury Studio" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrQQwISnX0DwlTCKC8z7vkF7zyd-mMkN59pXPZsszkODByx7eotbN6JWzwU10SVxXcVz1fuWzoBERhSjbTQeTmWnfEyxJt9IMmdV3vUEjlmWsruq6Fp6jKmdGIv5-NrdnVH4-F6Hn__JFbA-wwqYTNdl5Na1J17z0umtk7u2LeQ82pnOPKKIfPMwhqT0MjbUqOWOw1t0glXhvJfK24ZNrLu0cIx4emBQcW3WKTpdPoyz0uf5IlD5eQNQeiRxYIrhCoeYOTCiLLK2nU"/>
+                        </div>
+                        <div class="relative z-10 flex flex-col gap-6">
+                            <span class="material-symbols-outlined text-primary text-3xl">lock</span>
+                            <div>
+                                <h3 class="font-headline text-lg font-bold mb-4 uppercase tracking-wider text-white">Hard Registration Lock</h3>
+                                <p class="text-sm text-on-surface-variant leading-relaxed font-light">Upon reaching roster capacity, our digital portal secures automatically. No waitlists or retroactive additions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass-premium p-10 text-left transition-all duration-700 group flex flex-col gap-6 relative overflow-hidden rounded-2xl">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <span class="material-symbols-outlined text-8xl">event_busy</span>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-3xl">event_busy</span>
+                        <div>
+                            <h3 class="font-headline text-lg font-bold mb-4 uppercase tracking-wider text-white">Production Deadline</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed font-light">The upcoming season scheduling begins immediately following this window. Late submissions cannot be integrated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ultimate Call to Action -->
+                <div class="flex flex-col items-center gap-10">
+                    <button class="premium-cta-glow metallic-gradient text-on-primary font-black px-20 py-7 text-xl shadow-[0_20px_50px_-10px_rgba(242,202,80,0.4)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-[0.2em]">
+                        Secure Your Audition
+                    </button>
+                    <div class="flex items-center gap-4">
+                        <div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+                        <p class="text-[10px] text-primary font-bold uppercase tracking-[0.4em]">
+                            Limited availability remaining in all sectors
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Aesthetic Bottom Fade -->
+            <div class="w-full h-64 bg-gradient-to-b from-transparent to-black"></div>
+        </section>
+    </section>
+
+    <!-- Final CTA - Refined Categories 1 Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-surface-container-lowest py-32 px-6">
+        <!-- Dramatic Volumetric Lighting Beams -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-primary/20 via-primary/5 to-transparent rotate-12 blur-sm"></div>
+            <div class="absolute top-0 right-1/3 w-[2px] h-full bg-gradient-to-b from-primary/30 via-primary/10 to-transparent -rotate-6 blur-md"></div>
+            <div class="absolute -top-1/2 left-1/2 -translate-x-1/2 w-full h-full cinematic-beam opacity-60"></div>
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03] mix-blend-overlay"></div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 max-w-6xl w-full text-center">
+            <div class="inline-block mb-8">
+                <div class="h-1 w-24 bg-primary mx-auto mb-12"></div>
+            </div>
+            <h2 class="font-headline text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-tighter mb-10 text-glow">
+                Take Your <span class="text-primary italic">First Step</span> Today
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-12">
+                <p class="font-body text-xl md:text-2xl text-on-surface-variant font-medium leading-relaxed">
+                    This is your chance to step into the world of modeling and entertainment and get real exposure on a national platform.
+                </p>
+
+                <!-- Category Selection Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6 pt-4">
+                    <button class="px-8 py-4 border border-primary/40 bg-black/40 text-primary hover:bg-primary hover:text-black transition-all duration-300 font-headline font-bold text-sm md:text-base tracking-[0.15em] rounded">
+                        MISS INDIA
+                    </button>
+                    <button class="px-8 py-4 border border-primary/40 bg-black/40 text-primary hover:bg-primary hover:text-black transition-all duration-300 font-headline font-bold text-sm md:text-base tracking-[0.15em] rounded">
+                        MRS. INDIA
+                    </button>
+                    <button class="px-8 py-4 border border-primary/40 bg-black/40 text-primary hover:bg-primary hover:text-black transition-all duration-300 font-headline font-bold text-sm md:text-base tracking-[0.15em] rounded">
+                        MISS TEEN
+                    </button>
+                    <button class="px-8 py-4 border border-primary/40 bg-black/40 text-primary hover:bg-primary hover:text-black transition-all duration-300 font-headline font-bold text-sm md:text-base tracking-[0.15em] rounded">
+                        MR. INDIA
+                    </button>
+                </div>
+
+                <div class="flex flex-col items-center gap-4">
+                    <p class="font-label text-primary tracking-[0.2em] uppercase font-bold text-sm md:text-base border-y border-primary/20 py-2">
+                        Don’t wait. Opportunities like this don’t stay open for long.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-10 md:p-16 rounded-xl border border-outline-variant/15 shadow-2xl relative overflow-hidden group">
+                    <!-- Decorative background element -->
+                    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-700"></div>
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+                        <div class="text-left">
+                            <span class="font-label text-neutral-500 uppercase tracking-widest text-xs block mb-2">Standard Access Pass</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-4xl md:text-7xl font-headline font-bold text-white tracking-tight">₹999</span>
+                                <span class="text-neutral-400 font-semibold text-lg">/ limited time</span>
+                            </div>
+                            <p class="text-white font-bold text-lg mt-4 brightness-125">Apply now and secure your spot.</p>
+                        </div>
+                        <button class="premium-cta-glow group relative px-20 py-8 font-headline text-2xl font-black uppercase tracking-widest metallic-shine text-on-primary transition-all duration-300 hover:-translate-y-1 active:translate-y-0 active:scale-95 text-glow-gold">
+                            SECURE SLOT
+                            <div class="absolute inset-0 rounded-full border-2 border-white/20 scale-105 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-24 flex justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                <img alt="Partner 1" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9jmYxHz2rScqGe-YZu1dwb_-B0Bm4-4IlLgEFvKGLSXBi3XTYV1D3y_T_ydOA6zrEUWZXCWEqegCZl9hnC40uWQy8v3YEb0ncXK10ROh0HF7XdJ2v1POpIHMW1b6lqqeZhiXiB00F57ZoLm2dTrLSDtU4Bq5z0cBx9CfjcWTrOx75xZNNmoQL2kYZ7XOxqqJt-zP7-ZGJAeJXeBSAw46jY0_MgSXdfiWpgXNJij2R8-ZaRrxq20fQ4ulCod4uoSCRbxTR7N5LK2KC"/>
+                <img alt="Partner 2" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Ke3vcLwAbuYhu_2ESUT8lY_PsL4CPvhdsDuvhjsE7qRCfcKwhlhm8vUr6tCQZ7Ugl7dkijjdr-il7S3JINmLHpxrmr7SBn6YcaGXVcLsgLeUL3X5cz6wFSqwlZC7BpcZFYoRzDRBlgwvldvrhiiiuNSHe_uPy3TTc_g1q0do-XNJ9JCu4K-W-MoKUSFSpj5gfa3QdkaPFkL7N7xqpFZyhjRCzRCGhhIpd1edkoo7eZNmF0asIqmwxSTS_3aqqeSZgezQ8m5VxHDn"/>
+                <img alt="Partner 3" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkchp7W9LVc_dlsm2cTCjG9Od0RBmfS2AuI0BnychX71kNdm4Cp4QF6hTj8zec3wMhEi6bU1lPC_v3MWfMM2VYYSm6BFkA79CgWE-4KF2Bzq0XWJIHme7ysueEQjislr0fHMZOhIPayAe2jPbNcDUcrGJTOd2RSef-4fs_HL1Evn4z49tOkTSVbyEtbMbCUHRQOoR03-RJkbppTw_DZ1r5U1Dfa9ktm4FRzM5dDeAoX4vD_7MlLpCJUQwvNi4PTtseUc35JUvKXZbw"/>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-12 px-8 border-t border-white/5">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full">
+        <div class="text-lg font-black text-[#d4af37] font-headline">
+            DPM ENTERTAINMENT
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+            <a class="text-white/40 hover:text-[#f2ca50] transition-all font-body text-sm tracking-widest uppercase" href="#">Terms of Service</a>
+            <a class="text-white/40 hover:text-[#f2ca50] transition-all font-body text-sm tracking-widest uppercase" href="#">Privacy Policy</a>
+            <a class="text-white/40 hover:text-[#f2ca50] transition-all font-body text-sm tracking-widest uppercase" href="#">Press Kit</a>
+            <a class="text-white/40 hover:text-[#f2ca50] transition-all font-body text-sm tracking-widest uppercase" href="#">Contact</a>
+        </div>
+        <div class="text-white/40 font-body text-sm tracking-widest uppercase text-center md:text-right">
+            © 2024 DPM Entertainment. The Cinematic Luminary.
+        </div>
+    </div>
+</footer>
+
+
+    <style>
+        .notification-toast {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+        .notification-toast.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    </style>
+
+    <!-- Live Notifications Container -->
+    <div id="notification-container" class="fixed z-[100] top-24 right-8 md:right-12 pointer-events-none md:bottom-auto bottom-24 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 w-[calc(100%-48px)] md:w-80">
+        <div id="notification-card" class="notification-toast glass-card p-4 rounded-xl border border-primary/20 flex items-center gap-4 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
+            <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-primary/20">
+                <img id="notif-img" alt="User" class="w-full h-full object-cover" src=""/>
+            </div>
+            <div class="flex-grow">
+                <p id="notif-text" class="text-sm text-on-surface leading-tight font-medium"></p>
+                <div class="flex items-center gap-1.5 mt-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    <span class="text-[9px] uppercase tracking-widest text-primary font-bold">Just Applied</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const applicants = [
+            { name: "Rohit", city: "Delhi", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAw1Nc6WT-21hXnQbGCKOYQ24LK_94TlK_PxXdzR8xlqwQYdbIKeISrH3yhmInz0z7eOh3-T1e_snGXwQbwL-ka59Z7fwqFY3criElZsF4oqrj7wIYaCjGUtqC2VeEhjA-uzodnHGMm6SB8JYIym0dC27XqS8v6at8-IKTGrAfbWTiJ8UMwy8TY52OE3agfEhpI7WSpTfaRPWbqpbaThLmpt3wuGpOIOwGeUTH2hvUatYgXtsg1se2DMdUqhGhOIq81gs9HqHCD2Au6" },
+            { name: "Sanya", city: "Mumbai", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD-VcxTPkMqppXp3Ncwxlww0Ia9vaYE_ukzljGf7WuAaWZdxzYDZ595rJ5t2WlJMMOOpHs4oCEW1jDdiRZwFoYg6c4hWVPopbV9lrxCIAo_X7JUQfFGjlXhjMSWRQehKsg1jZxlRjXM6f3-ZrlCuw-tBIz_8qfwnHzSVxkHITd6EvqFXJmjRXaCREqNyGWmVJ_beej0XcC2ChXQ75-wJF557OpMyj2aRmHr5och0DqL-vqHZKsddrJoUaODZZRLbmv1xfULxXUxL7cQ" },
+            { name: "Arjun", city: "Bangalore", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAg7B6osPS7NG4vi0uYBniM8wNa6uQcfJyXA51PSYGMtKD-uRztPPIMQhYXHTmWPVjKDn87RFfk9wzZ8rUPS_vKHARtlBHFZkgdmznxkfL8axa-dYC3TReNy_D1t7lgp6pbEK3DaHCNJREPskHczza4weyBVVK-FIVmc4OARxk1DxKw5QtLQfvyB1uiXC2Gf0BRf1pnsGW1vj3cktU_4wosFiVCaw2bCgajgjZZwJXpTuUhs9p68j0bpqir8IjSdAzemTCLd50bOQTD" },
+            { name: "Ishaan", city: "Pune", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCcX6WUFNUh8wUHi7AcuLv0qBbZJG6CLn0xoUrePc5hJxOQQzwpYpB8PZtWQkWt_ieMIPgqNAN1u0NiTsUE3IKUcC-TOzqdTQ4KzIZ8j1WasefNulddK9Bx7AOG57x3Fpx6hVTJpzf7LTE3lP9MHVvazSBtL_y_0zgbBbjfDddzHBUaO30_xidqWTVKjRsxFumfLy3IthDlw2kl5gRaA_nWtTUGYAuciEH4-_zd-GZOl8ZlOKpRGDP6LbJM8dDUTIxbqR_Q4YH6tElY" },
+            { name: "Meera", city: "Chennai", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-9yuH4XhAByMb_dlqIaq53SsYkm8WYLS6JiYY0YxlzLJ1iTzGqYArjsM9Su0dcVu8jUsWCwCu90SPOdk7gRfKU9zitHOpLi996IDfec8mDOeUNZ_DXGgjJVeYvggrA_ljZfdZqLoGIChrhHML03IrcbibJFyHlBjgOgRZcBhUR2KoOByg-icjVOjhBQUD-iNRxi16DfvYsd_0y6j6Meq7Zt0S0aWCScGeml55S7STZP1ohduFFBX3gg72H68efRSl--FXuo-65ykx" }
+        ];
+
+        const card = document.getElementById('notification-card');
+        const notifImg = document.getElementById('notif-img');
+        const notifText = document.getElementById('notif-text');
+        
+        let index = 0;
+
+        function showNotification() {
+            const current = applicants[index];
+            notifImg.src = current.img;
+            notifText.innerHTML = `<strong>${current.name}</strong> from <strong>${current.city}</strong> just applied`;
+            
+            card.classList.add('active');
+            
+            setTimeout(() => {
+                card.classList.remove('active');
+                index = (index + 1) % applicants.length;
+                
+                // Show next notification after a delay
+                setTimeout(showNotification, Math.random() * 5000 + 4000);
+            }, 4000);
+        }
+
+        // Initial launch
+        setTimeout(showNotification, 2000);
+    </script>
+
+    <style>
+        .sticky-cta-container {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+        }
+        .sticky-cta-container.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .cta-glow-pulse {
+            animation: cta-pulse 2s infinite;
+        }
+        @keyframes cta-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(242, 202, 80, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(242, 202, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(242, 202, 80, 0); }
+        }
+    </style>
+
+    <!-- Sticky CTA Container -->
+    <div id="sticky-cta" class="sticky-cta-container fixed z-[90] w-full md:w-auto md:bottom-12 md:right-12 bottom-0 left-0">
+        <!-- Desktop: Floating Pill -->
+        <div class="hidden md:block">
+            <button class="premium-cta-glow metallic-shine text-black font-headline font-black px-12 py-6 shadow-[0_20px_40px_-10px_rgba(242,202,80,0.5)] cta-glow-pulse hover:scale-110 active:scale-95 transition-all flex items-center gap-3 group">
+                <span class="material-symbols-outlined font-bold group-hover:rotate-12 transition-transform">confirmation_number</span>
+                BOOK AUDITION – ₹999
+            </button>
+        </div>
+
+        <!-- Mobile: Fixed Bottom Bar -->
+        <div class="md:hidden w-full px-4 pt-4 pb-6 bg-black/80 backdrop-blur-md border-t border-white/5">
+            <button class="premium-cta-glow w-full metallic-shine text-black font-headline font-black py-6 shadow-2xl flex items-center justify-center gap-3 animate-pulse active:scale-95 transition-all">
+                BOOK YOUR AUDITION – ₹999
+                <span class="material-symbols-outlined font-bold">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const stickyCta = document.getElementById('sticky-cta');
+        
+        window.addEventListener('scroll', () => {
+            const scrollThreshold = 700; 
+            if (window.scrollY > scrollThreshold) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+
+        // --- COUNTDOWN TIMER LOGIC ---
+        const targetDate = new Date('June 1, 2026 00:00:00').getTime();
+
+        function updateTimers() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference < 0) {
+                updateUI({ d: "000", h: "00", m: "00" });
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+            updateUI({
+                d: days.toString().padStart(3, '0'),
+                h: hours.toString().padStart(2, '0'),
+                m: minutes.toString().padStart(2, '0')
+            });
+        }
+
+        function updateUI(time) {
+            // Hero Timer
+            const hDays = document.getElementById('hero-days');
+            const hHours = document.getElementById('hero-hours');
+            const hMins = document.getElementById('hero-mins');
+            if(hDays) hDays.innerText = time.d;
+            if(hHours) hHours.innerText = time.h;
+            if(hMins) hMins.innerText = time.m;
+
+            // Urgency Timer
+            const uDays = document.getElementById('urgency-days');
+            const uHours = document.getElementById('urgency-hours');
+            const uMins = document.getElementById('urgency-mins');
+            if(uDays) uDays.innerText = time.d.slice(-2); 
+            if(uHours) uHours.innerText = time.h;
+            if(uMins) uMins.innerText = time.m;
+        }
+
+        updateTimers();
+        setInterval(updateTimers, 60000); // Sync every minute
+    </script>
+
+</body>
+</html>
