@@ -482,14 +482,16 @@
                 radial-gradient(1.5px 1.5px at 80% 70%, rgba(255,224,139,0.4) 100%, transparent),
                 radial-gradient(2px 2px at 90% 10%, rgba(212,175,55,1) 100%, transparent);
             background-size: 400px 600px;
-            animation: falling-stardust 60s linear infinite;
-            will-change: background-position;
+            animation: falling-stardust 40s linear infinite;
+            will-change: transform;
             opacity: 0.25;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         @keyframes falling-stardust {
-            0% { background-position: 0 0; }
-            100% { background-position: 100px 1200px; }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(600px); }
         }
 
         .dreamy-edge {
@@ -1221,8 +1223,8 @@
         </div>
 
     <!-- Real Proof - Colorized Luxe 1 Section -->
-    <section class="relative pt-16 pb-0 overflow-hidden bg-black">
-        <div class="absolute inset-0 stardust-bg opacity-20 pointer-events-none z-0"></div>
+    <section class="relative pt-16 pb-0 overflow-hidden bg-black transform-gpu">
+        <div class="absolute inset-0 h-[400%] stardust-bg opacity-20 pointer-events-none z-0"></div>
         <!-- Aureum Noir Lighting Effects -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-[radial-gradient(circle_at_center,_rgba(242,202,80,0.08)_0%,_transparent_70%)] pointer-events-none"></div>
         
@@ -1341,8 +1343,8 @@
     </section>
 
     <!-- Testimonials - Infinite Scroll Section -->
-    <section class="relative pt-12 pb-32 overflow-hidden bg-black">
-        <div class="absolute inset-0 stardust-bg opacity-20 pointer-events-none z-0"></div>
+    <section class="relative pt-12 pb-32 overflow-hidden bg-black transform-gpu">
+        <div class="absolute inset-0 h-[400%] stardust-bg opacity-20 pointer-events-none z-0"></div>
         <!-- Ambient Light Leaks - Removed for connected feel -->
         
         <!-- Header Section -->
